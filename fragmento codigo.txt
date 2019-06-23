@@ -1,0 +1,24 @@
+ApplicationContext context = 
+    new ClassPathXmlApplicationContext(
+                   new String[]{"configfile1.xml"});
+
+
+
+
+
+UsefulClass usefulClass =  (UsefulClass) context.getBean("myBeanName");
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- bean definitions here -->
+    <bean class="es.lanyu.Test" id="test" init-method="init">
+        <property name="testString" value="¡He sido inyectada!"></property>
+    </bean>
+
+</beans>
